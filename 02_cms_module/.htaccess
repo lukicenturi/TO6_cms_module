@@ -1,0 +1,12 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /wsc/module_A/git/TO6_cms_module/02_cms_module/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /wsc/module_A/git/TO6_cms_module/02_cms_module/index.php [L]
+</IfModule>
+
+# END WordPress

@@ -1,0 +1,670 @@
+/*
+Theme Name: Blankslate_Child_ThailandFoodGuides
+Template: blankslate
+ */
+
+*{
+    box-sizing: border-box;
+    max-width: 100%;
+    outline: none;
+    font-family: Montserrat;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+html.html{
+    margin-top: 0 !important;
+    overflow-x: hidden;
+}
+
+#wpadminbar{
+    position: fixed !important;
+    top: 0;
+}
+
+a{
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: 0.5s all;
+}
+
+a:hover{
+    color: orange !important;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+input,
+select,
+button{
+    color: inherit;
+}
+
+button{
+    cursor: pointer;
+}
+
+input::placeholder{
+    color: #bababa;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.row{
+    margin: 0 -15px;
+    max-width: none;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.wrapper{
+    padding: 15px;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 10;
+    color: white;
+}
+
+body.admin-bar header{
+    top: 32px;
+}
+
+@media screen and (max-width: 782px){
+    body.admin-bar header{
+        top: 46px;
+    }
+}
+
+header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .toggle{
+    display: none;
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.logo img{
+    width: auto;
+    filter: brightness(10000%);
+}
+
+header .logo img{
+    height: 70px;
+}
+
+header .menu{
+    display: flex;
+    align-items: center;
+}
+
+header .menu li{
+    padding: 10px;
+}
+
+header .menu a{
+    font-size: 0.8em;
+}
+
+header select{
+    padding: 9px 9px 10px;
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+}
+
+header select option{
+    color: black;
+}
+
+header form{
+    display: flex;
+    border: 2px solid white;
+}
+
+header input{
+    background: transparent;
+    border: none;
+    padding: 10px;
+    flex: 1;
+}
+
+header button{
+    background: none;
+    border: none;
+    font-size: 1.5em;
+}
+
+.background{
+    width: 100%;
+    height: 100%;
+    filter: brightness(30%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#banner{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+#banner h1{
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+#banner span{
+    background: rgba(255,255,255,0.2);
+    padding: 10px;
+    font-size: 2em;
+    font-family: AmaticSC;
+    margin-bottom: 20px;
+}
+
+.btn{
+    border: 2px solid white;
+    padding: 10px 30px;
+    color: white;
+    background: transparent;
+}
+
+.section{
+    position: relative;
+    padding: 100px 0;
+}
+
+.section .header{
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.section .header .icon{
+    font-size: 4em;
+}
+
+.section .main-title{
+    font-size: 4em;
+    color: orange;
+    font-family: AmaticSC;
+}
+
+.section .desc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section .desc hr{
+    width: 100px;
+    height: 2px;
+    margin: 0;
+    background: black;
+    border: none;
+}
+.section .desc span{
+    padding: 10px 20px;
+    font-weight: normal;
+}
+
+.section.invers .header .icon,
+.section.invers .header .desc{
+    color: white;
+}
+
+.section.invers .header .desc hr{
+    background: white;
+}
+
+.col-2{width: 20%;}
+.col-3{width: 25%}
+.col-4{width: 33.3333333%}
+
+.section .image{
+    height: 200px;
+    position: relative;
+    background: #efefef;
+}
+
+.section img{
+    z-index: 2;
+}
+
+.recipes .word{
+    padding: 10px 0;
+}
+
+.recipes .date{
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+
+.recipes .like{
+    position: absolute;
+    z-index: 3;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+}
+
+.recipes .like > div{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+.recipes .like .button{
+    background: white;
+    position: relative;
+    cursor: pointer;
+}
+
+.recipes .like .counter{
+    background: rgba(255,255,255,0.8);
+}
+
+.recipes .like .button:after{
+    position: absolute;
+    content: '';
+    color: orange;
+    font-family: Ionicons;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(0);
+    transition: 0.3s all cubic-bezier(0,0,0.4, 0.16);
+}
+
+.recipes .like .button[data-like="1"]:after{
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.calculator input,
+.calculator button{
+    width: 100%;
+}
+
+.calculator input{
+    padding: 10px;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid white;
+}
+
+.btn-white{
+    background: white;
+    color: black;
+    font-size: 1.4em;
+    padding: 4px 0;
+}
+
+.gallery{
+    background: #efefef;
+}
+
+.gallery .outer{
+    position: relative;
+    color: white;
+}
+.gallery .image{
+    height: 600px;
+}
+
+.gallery .word{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.section .title{
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.section .title:after{
+    content: '';
+    height: 3px;
+    width: 50px;
+    background: black;
+    position: absolute;
+    top: 150%;
+    left: 0;
+}
+
+.gallery .title:after{
+    background: white;
+}
+
+.section .desc{
+    font-weight: 100;
+    line-height: 1.5em;
+}
+
+.gallery .more{
+    background: orange;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    transition: 0.5s all;
+    overflow-y: scroll;
+    padding: 20px 25px;
+}
+
+.gallery .more .counter{
+    font-size: 1.2em;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.gallery .more.active{
+    width: 100%;
+    height: 100%;
+    background: rgba(255,165,0,0.7);
+}
+
+.gallery .more.active .counter,
+.gallery .more .row{
+    display: none;
+}
+
+.gallery .more.active .row{
+    display: flex;
+}
+
+.gallery .more .item{
+    height: 200px;
+}
+
+.gallery .outer .desc{
+    max-width: calc(100% - 70px);
+}
+
+.blogs .status{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.2em;
+}
+
+.blogs .status > div{
+    padding: 2px 5px;
+}
+
+.blogs .status .date{
+    background: black;
+    color: orange;
+}
+
+.blogs .status .view{
+    background: orange;
+    display: flex;
+    align-items: center;
+}
+
+.blogs .status .view span{
+    margin-right: 10px;
+}
+
+.blogs .word{
+    padding: 20px 0;
+}
+
+.sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px;
+    height: 100%;
+    background: black;
+    margin-left: -280px;
+    transition: 0.5s all;
+    z-index: 9;
+}
+
+.sidebar.active{
+    margin-left: 0;
+}
+
+.sidebar .toggle{
+    width: 50px;
+    height: 50px;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Ionicons;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    cursor: pointer;
+}
+
+.sidebar .toggle:after{
+    content: '';
+}
+
+.sidebar.active .toggle:after{
+    content: '';
+}
+
+#sidebar, #primary{
+    width: 100%;
+    height: 100%;
+}
+
+.xoxo{
+    height: 100%;
+    padding: 120px 30px 20px;
+    overflow-y: overlay;
+}
+
+.xoxo > li{
+    padding: 10px;
+    background: white;
+    margin-bottom: 10px;
+}
+
+.xoxo .widget_search{
+    display: none;
+}
+
+.xoxo h3{
+    margin: 10px 0;
+}
+
+.xoxo ul > li{
+    border-top: 1px dashed #ddd;
+    padding: 5px 0;
+}
+
+.xoxo table{
+    width: 100%;
+}
+
+footer{
+    color: white;
+}
+
+footer .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .logo{
+    align-self: center;
+}
+
+footer .logo img{
+    height: 100px;
+}
+
+footer span{
+    margin-right: 10px;
+    color: orange;
+}
+
+footer  li{
+    margin-bottom: 10px;
+}
+
+footer .social li a{
+    display: flex;
+    background: orange;
+    align-items: center;
+    padding-right: 10px;
+}
+
+footer .social li a span{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+footer .social li a:hover{
+    background: white;
+}
+
+.copyright{
+    background: black;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+}
+
+@media screen and (max-width: 1199px){
+    .container{
+        width: 100%;
+        padding: 0 5px;
+    }
+    header .toggle{
+        display: block;
+    }
+
+    header .menu{
+        width: 100%;
+        background: rgba(0,0,0,0.8);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
+        display: none;
+    }
+
+    header .menu.active{
+        display: flex;
+    }
+
+    .col-lg-4{width:33.3333%}
+    .col-lg-6{width:50%}
+    .col-lg-12{width:100%}
+}
+
+@media screen and (max-width: 767px){
+    #banner{
+        height: auto;
+        padding: 240px 0 160px;
+    }
+
+    .col-md-4{width:33.3333%}
+    .col-md-6{width:50%}
+    .col-md-12{width:100%}
+}
+
+@media screen and (max-width: 479px){
+
+    #banner{
+        padding: 120px 0 100px;
+    }
+
+    html{
+        font-size: 0.8em;
+    }
+
+    .section{
+        padding: 30px 0;
+    }
+
+    .section .header{
+        margin-bottom: 30px;
+    }
+
+    .section .header .desc hr{
+        width: 30px;
+    }
+
+    .calculator button{
+        padding: 7px 0;
+    }
+
+    .col-sm-4{width:33.3333%}
+    .col-sm-6{width:50%}
+    .col-sm-12{width:100%}
+}
