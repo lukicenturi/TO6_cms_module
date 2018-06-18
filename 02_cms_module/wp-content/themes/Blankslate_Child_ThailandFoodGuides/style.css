@@ -42,6 +42,16 @@ ul{
     list-style: none;
 }
 
+ol{
+    margin: 0;
+    padding: 0;
+}
+
+ol li{
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
 img{
     width: 100%;
     height: 100%;
@@ -78,6 +88,7 @@ input::placeholder{
 
 .wrapper{
     padding: 15px;
+    transition: 0.5s all;
 }
 
 header{
@@ -229,20 +240,20 @@ header button{
     font-family: AmaticSC;
 }
 
-.section .desc{
+.section .header .desc{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.section .desc hr{
+.section .header .desc hr{
     width: 100px;
     height: 2px;
     margin: 0;
     background: black;
     border: none;
 }
-.section .desc span{
+.section .header .desc span{
     padding: 10px 20px;
     font-weight: normal;
 }
@@ -259,15 +270,32 @@ header button{
 .col-2{width: 20%;}
 .col-3{width: 25%}
 .col-4{width: 33.3333333%}
+.col-12{width: 100%}
 
 .section .image{
-    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
+    height: 50px;
+}
+
+.section:not(.single) .image{
     background: #efefef;
+    height: 200px;
+}
+
+.section:not(.single) .image:before{
+    content: "No Image Available";
+    color: #999;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
 }
 
 .section img{
     z-index: 2;
+    position: relative;
 }
 
 .recipes .word{
@@ -285,6 +313,7 @@ header button{
     bottom: 10px;
     left: 10px;
     display: flex;
+    align-items: center;
 }
 
 .recipes .like > div{
@@ -314,11 +343,11 @@ header button{
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%) scale(0);
-    transition: 0.3s all cubic-bezier(0,0,0.4, 0.16);
+    transition: 0.1s all cubic-bezier(0,0,0.4, 0.16);
 }
 
 .recipes .like .button[data-like="1"]:after{
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%) scale(1);
 }
 
 .calculator input,
@@ -330,6 +359,7 @@ header button{
     padding: 10px;
     background: rgba(255,255,255,0.2);
     border: 2px solid white;
+    color: white;
 }
 
 .btn-white{
@@ -348,7 +378,7 @@ header button{
     color: white;
 }
 .gallery .image{
-    height: 600px;
+    height: 600px !important;
 }
 
 .gallery .word{
@@ -362,6 +392,7 @@ header button{
     flex-direction: column;
     justify-content: flex-end;
     padding: 20px;
+    z-index: 4;
 }
 
 .section .title{
@@ -399,8 +430,9 @@ header button{
     bottom: 0;
     cursor: pointer;
     transition: 0.5s all;
-    overflow-y: scroll;
+    overflow-y: hidden;
     padding: 20px 25px;
+    z-index: 6;
 }
 
 .gallery .more .counter{
@@ -418,6 +450,7 @@ header button{
 
 .gallery .more.active{
     width: 100%;
+    overflow-y: overlay;
     height: 100%;
     background: rgba(255,165,0,0.7);
 }
@@ -447,6 +480,7 @@ header button{
     flex-direction: column;
     align-items: flex-start;
     font-size: 1.2em;
+    z-index: 3;
 }
 
 .blogs .status > div{
@@ -597,6 +631,103 @@ footer .social li a:hover{
     padding: 20px 0;
     text-align: center;
     color: white;
+}
+
+.paginate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginate > *{
+    background: #efefef;
+    border-radius: 1000px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+.paginate span{
+    background: #bbb;
+}
+
+.ingredients .item{
+    border: 2px solid #efefef;
+    padding: 20px;
+}
+
+.ingredients .info{
+    display: flex;
+    margin-top: 20px;
+    border-top: 1px solid #efefef;
+    padding-top: 20px;
+}
+
+.ingredients .info li{
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.ingredients .info li div:first-child{
+    font-size: 2em;
+    color: orange;
+}
+
+.modal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 15;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s all;
+}
+
+.modal.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+.modal-wrapper{
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-head span{
+    cursor: pointer;
+}
+
+.modal-body{
+    padding: 10px;
+    overflow-x: overlay;
+}
+
+.modal table{
+    border-collapse: collapse;
+}
+
+.modal table th,
+.modal table td{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
 }
 
 @media screen and (max-width: 1199px){

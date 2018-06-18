@@ -3878,6 +3878,17 @@ var acf = {
 					div.data('validation', true);
 				}
 			}
+
+            // relationship
+            if( div.find('[data-field_key="field_5b27471b84f11"]').exists() )
+            {
+                div.data('validation', false);
+
+                if( div.find('[data-field_key="field_5b27471b84f11"] .relationship_right input').length >= 3 )
+                {
+                    div.data('validation', true);
+                }
+            }
 			
 			
 			// repeater

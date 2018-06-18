@@ -6,7 +6,7 @@
             <?php endif; ?>
 
             <div class="status">
-                <div class="date"><?=get_the_date('d M Y') ?></div>
+                <div class="date"><?= Date('d M Y', strtotime(get_the_date('d M Y'))) ?></div>
                 <div class="view">
                     <span class="fa-eye"></span>
                     <div><?=get_field('view') ?></div>
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="word">
-            <a href="<?get_the_permalink() ?>">
+            <a href="<?= get_the_permalink() ?>">
                 <div class="title">
                     <?= get_the_title() ?>
                 </div>

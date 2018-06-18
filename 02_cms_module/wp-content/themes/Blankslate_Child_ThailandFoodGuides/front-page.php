@@ -60,71 +60,41 @@
                     <input type="text" id="car" placeholder="Carbohydrate">
                 </div>
                 <div class="wrapper col-3 col-sm-6">
-                    <button class="btn btn-white fa-calculator"></button>
+                    <button class="btn btn-white fa-calculator" id="calculate"></button>
                 </div>
             </div>
         </div>
     </div>
+<div class="modal" onclick="$('.modal').removeClass('active')">
+    <div class="modal-wrapper" onclick="event.stopPropagation()">
+        <div class="modal-head">
+            <h1>NUTRITION CALCULATOR RESULT</h1>
+            <span class="fa fa-close"  onclick="$('.modal').removeClass('active')"></span>
+        </div>
+        <div class="modal-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ingredient <br> Name</th>
+                        <th>Calorie <br> (per 100 ml/gr)</th>
+                        <th>Fat <br> (per 100 ml/gr)</th>
+                        <th>Carbohydrate <br> (per 100 ml/gr)</th>
+                        <th>Quantity <BR> needed</th>
+                        <th>Total <BR> Calorie</th>
+                        <th>Total <BR> Fat</th>
+                        <th>Total <BR> Carbohydrate</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-    <div class="gallery section">
-        <div class="container">
-            <div class="header">
-                <div class="icon fa-camera"></div>
-                <div class="main-title">OUR GALLERY</div>
-                <div class="desc">
-                    <hr>
-                    <span>Beautiful Food Photo</span>
-                    <hr>
-                </div>
-            </div>
-
-            <div class="outer">
-                <div class="now">
-                    <div class="image">
-                        <img src="<?= DIR ?>/images/banner.jpg" alt="banner">
-                    </div>
-                    <div class="word">
-                        <div class="title">
-                            Lorem Ipsum
-                        </div>
-                        <div class="desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi atque blanditiis dolore ipsam ipsum maiores nam officia, qui quis quo quos sint unde velit veritatis. Dolor expedita perspiciatis vel!
-                        </div>
-                    </div>
-                </div>
-                <div class="more" onclick="$('.more').toggleClass('active')">
-                    <div class="counter">+7</div>
-                    <div class="row">
-                        <div class="wrapper col-2 col-lg 4 col-md-6 col-sm-12">
-                            <div class="item">
-                                <img src="<?=DIR?>/images/banner.jpg" alt="banner">
-                            </div>
-                        </div>
-                        <div class="wrapper col-2 col-lg 4 col-md-6 col-sm-12">
-                            <div class="item">
-                                <img src="<?=DIR?>/images/banner.jpg" alt="banner">
-                            </div>
-                        </div>
-                        <div class="wrapper col-2 col-lg 4 col-md-6 col-sm-12">
-                            <div class="item">
-                                <img src="<?=DIR?>/images/banner.jpg" alt="banner">
-                            </div>
-                        </div>
-                        <div class="wrapper col-2 col-lg 4 col-md-6 col-sm-12">
-                            <div class="item">
-                                <img src="<?=DIR?>/images/banner.jpg" alt="banner">
-                            </div>
-                        </div>
-                        <div class="wrapper col-2 col-lg 4 col-md-6 col-sm-12">
-                            <div class="item">
-                                <img src="<?=DIR?>/images/banner.jpg" alt="banner">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
+
+<?php the_content() ?>
+
 
 <div class="blogs section">
     <div class="container">

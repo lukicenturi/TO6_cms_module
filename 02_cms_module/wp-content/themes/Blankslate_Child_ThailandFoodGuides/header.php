@@ -66,8 +66,9 @@
                 <li><a href="<?= get_home_url() ?>/ingredients">INGREDIENTS</a></li>
                 <li>
                     <select name="lang" id="lang" onchange="location.href='<?=get_home_url() ?>?lang=' + this.value">
-                        <option value="">English</option>
-                        <option value="">Thailand</option>
+                        <?php foreach($GLOBALS['q_config']['language_name'] as $key=>$value): ?>
+                        <option value="<?=$key?>" <?php if($GLOBALS['q_config']['language'] == $key): ?> selected <?php endif ?>><?= $value ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </li>
                 <li>

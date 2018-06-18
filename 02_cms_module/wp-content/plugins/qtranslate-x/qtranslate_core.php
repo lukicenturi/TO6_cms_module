@@ -132,7 +132,7 @@ function qtranxf_init_language() {
 }
 add_action('plugins_loaded', 'qtranxf_init_language', 2);//user is not authenticated yet
 
-function qtranxf_detect_language(&$url_info) {
+function qtranxf_detect_language($url_info) {
 	global $q_config;
 
 	if(defined('WP_ADMIN') || defined('WP_CLI')){

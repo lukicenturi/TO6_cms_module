@@ -12,7 +12,7 @@
         </div>
         <div class="word">
             <div class="date">
-                <?= get_the_date('d M Y') ?>
+                <?= Date('d M Y', strtotime(get_the_date('d M Y'))) ?>
             </div>
             <a href="<?= get_the_permalink() ?>">
                 <div class="title">
